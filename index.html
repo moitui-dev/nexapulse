@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NetPulse | Network Intelligence</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="app">
+            <!--SIDEBAR-->
+            <aside class="sidebar">
+                <div class="brand">
+                    <div class="brand-icon">N</div>
+                    <span>NetPulse<span class="dot">.</span></span>
+                </div>
+                <div class="side-label">WORKSPACE</div>
+
+                <nav>
+                    <a href="#overview" class="nav-link active">
+                        <span>🛜</span>Network Map
+                    </a>
+
+                    <a href="#devices" class="nav-link">
+                        <span>⏹️</span>Devices
+                    </a>
+
+                    <a href="#diagnostics" class="nav-link">
+                        <span>⚡</span>Diagnostics
+                    </a>
+                </nav>
+
+                <div class="sidebar-bottom">
+                    <div class="connection-card">
+                        <div class="connection-indicator"></div>
+                        <div>
+                            <strong>Network Online</strong>
+                            <small>Simulation environment</small>
+                        </div>
+                    </div>
+                    <p>NETPULSE v1.0.0</p>
+                </div>
+            </aside>
+
+            <!--MAIN CONTENT-->
+            <main class="main-content">
+
+                <header class="topbar">
+                    <div>
+                        <h1>Network Overview</h1>
+                        <p>Monitor your network performance and infrastructure.</p>
+                    </div>
+
+                    <div class="top-actions">
+                        <span class="live-status">
+                            <span class="live-dot"></span>LIVE SIMULATION
+                        </span>
+                    </div>
+
+                    <div class="avatar">BM</div>
+                </header>
+
+                <!-- OVERVIEW SECTION -->
+                <section id="overview">
+
+                    <!--METRICS-->
+                    <div class="metrics-grid">
+
+                        <div class="metric-card">
+                            <div class="metric-heading">
+                                <span>Network Latency</span><span class="metric-icon">🛞</span>
+                            </div>
+                            <h2 id="latency">24<small>ms</small></h2>
+                            <p class="positive">⏺️ Connection responsive</p>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-heading">
+                                <span>Packet Loss</span>
+                                <span class="metric-icon">⚡</span>
+                            </div>
+                            <h2 id="packetLoss">0.0<small>%</small></h2>
+                            <p class="positive">⏺ Within normal range</p>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-heading"><span>Connected Devices</span><span class="metric-icon">⏺</span></div>
+                            <h2 id="deviceCount">04</h2>
+                            <p class="neutral">Device in simulations</p>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-heading"><span>Network Uptime</span><span class="metric-icon">⏺</span></div>
+                            <h2 id="uptime">99.9<small>%</small></h2>
+                            <p class="positive">⏺ Stable connection</p>
+                        </div>
+                    </div>
+
+                    <!--CHART-->
+                    <div class="panel traffic-panel">
+                        <div class="panel-header">
+                            <div><h3>Network Performance</h3></div>
+                            <p>Real-time simulated latency measurements</p>
+                        </div>
+                        <span class="chart-tag">LAST 20 READINGS</span>
+
+                        <div class="chart-container">
+                            <div class="chart-y-labels">
+                                <span>100 ms</span>
+                                <span>75 ms</span>
+                                <span>50 ms</span>
+                                <span>25 ms</span>
+                                <span>0 ms</span>
+                            </div>
+                            <canvas id="latencyChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <!--NETWORK MAP / TOPOLOGY-->
+                <section id="topology" class="panel topology">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Network Topology</h3>
+                            <p>Visual Representation of connected infrastructure</p>
+                        </div>
+                        <span class="chart-tag">4 NODES</span>
+                    </div>
+
+                    <div class="network-map">
+                        <div class="network-node">
+                            <div class="node-icon">🌐</div>
+                            <strong>Internet</strong>
+                            <small>External network</small>
+                        </div>
+
+                        <div class="network-line"></div>
+
+                        <div class="network-node router-node">
+                            <div class="node-icon">📡</div>
+                            <strong>Main Router</strong>
+                            <small>192.168.0.1</small>
+                        </div>
+
+                        <div class="network-branches">
+                            <div class="branch"></div>
+                            <div class="branch"></div>
+                            <div class="branch"></div>
+                        </div>
+                    </div>
+
+                    <div class="network-devices">
+                        <div class="network-node small-node">
+                            <div class="node-icon">💻</div>
+                            <strong>Laptop</strong>
+                            <small>192.168.0.101</small>
+                        </div>
+
+                        <div class="network-node small-node">
+                            <div class="node-icon">📱</div>
+                            <strong>Phone</strong>
+                            <small>192.168.0.102</small>
+                        </div>
+
+                        <div class="network-node small-node">
+                            <div class="node-icon">🖥️</div>
+                            <strong>Desktop</strong>
+                            <small>192.168.0.103</small>
+                        </div>
+                    </div>
+                </section>
+
+                <!--DEVICES-->
+                <section id="devices" class="panel devices-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Connected Devices</h3>
+                            <p>Devices currently registered in your simulation</p>
+                        </div>
+                        <span class="chart-tag">4 CONNECTED</span>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>DEVICE</th>
+                                    <th>IP ADDRESS</th>
+                                    <th>TYPE</th>
+                                    <th>STATUS</th>
+                                </tr>
+                            </thead>
+                            <tbody id="deviceTable">
+                                <tr>
+                                    <td>📡 Main Router</td>
+                                    <td>192.168.0.1</td>
+                                    <td>Router</td>
+                                    <td><span class="status online">Online</span></td>
+                                </tr>
+                                <tr>
+                                    <td>💻 Laptop</td>
+                                    <td>192.168.0.101</td>
+                                    <td>Computer</td>
+                                    <td><span class="status online">Online</span></td>
+                                </tr>
+                                <tr>
+                                    <td>📱 Phone</td>
+                                    <td>192.168.0.102</td>
+                                    <td>Mobile</td>
+                                    <td><span class="status online">Online</span></td>
+                                </tr>
+                                <tr>
+                                    <td>🖥️ Desktop</td>
+                                    <td>192.168.0.103</td>
+                                    <td>Computer</td>
+                                    <td><span class="status online">Online</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!--DIAGNOSTICS-->
+                <section id="diagnostics" class="panel diagnostics-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Network Diagnostics</h3>
+                            <p>Test network response and connectivity</p>
+                        </div>
+                        <span class="chart-tag">DIAGNOSTIC LAB</span>
+                    </div>
+
+                    <div class="diagnostic-controls">
+                        <div class="input-group">
+                            <label for="target">TARGET IP ADDRESS</label>
+                            <input type="text" id="target" value="192.168.0.1">
+                        </div>
+                        <button id="pingButton" onclick="runPing()">Run Ping Test -&gt;</button>
+                    </div>
+
+                    <div class="terminal" id="terminal">
+                        <div class="terminal-header">
+                            <span>⏺ ⏺ ⏺</span>
+                            <span>NETPULSE TERMINAL</span>
+                        </div>
+                        <div id="terminalOutput">
+                            <p class="terminal-muted">NetPulse diagnostic terminal initialized.</p>
+                            <p class="terminal-muted">Enter a target IP address and run a test.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <footer>
+                    <span>NetPulse © 2026</span>
+                    <span>Built for network intelligence and learning.</span>
+                </footer>
+            </main>
+        </div>
+
+        <script src="js/app.js"></script>
+    </body>
+</html>
